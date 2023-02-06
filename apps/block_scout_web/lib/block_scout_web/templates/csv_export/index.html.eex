@@ -28,11 +28,18 @@
   <script type="text/javascript">
     var widgetId1
     var onloadCallback = function() {
-      var reCaptchaClientKey = '<%= Application.get_env(:block_scout_web, :re_captcha_client_key) %>' 
+      var reCaptchaClientKey = '<%= Application.get_env(:block_scout_web, :re_captcha_client_key) %>'
       if (reCaptchaClientKey) {
         widgetId1 = grecaptcha.render('recaptcha', {
           'sitekey': reCaptchaClientKey,
-          'theme': getCookie('chakra-ui-color-mode'),
+                    'theme': function () {
+            const permanentDarkModeEnabled = document.getElementById('permanent-dark-mode').textContent === 'true'
+            if (permanentDarkModeEnabled) {
+              return 'dark'
+            } else {
+              return getCookie('chakra-ui-color-mode')
+            }
+          },
           'callback': function () {
             document.getElementById('export-csv-button').disabled = false
           }
