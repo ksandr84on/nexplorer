@@ -1,0 +1,5 @@
+<title>
+  <%= gettext("%{subnetwork} %{network} Explorer", subnetwork: LayoutView.subnetwork_title(), network: LayoutView.network_title()) %>
+</title>
+<meta name="description" content="<%= gettext "Greenera network makes your business greener. Every transaction helps the planet" %>">
+<meta name="keywords" content="blockchain, Greenera, NERA, cryptocurrency, carbon, units">
