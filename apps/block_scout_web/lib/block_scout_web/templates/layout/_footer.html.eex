@@ -34,7 +34,7 @@
       </div>
 
       <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
-        <h3>Greenera</h3>
+
         <ul>
           <li><a href="/" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Submit an Issue") %></a></li>
           <li><a href="/" rel="noreferrer" class="footer-link"><%= gettext("Contribute") %></a></li>
