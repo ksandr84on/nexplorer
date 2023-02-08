@@ -7,10 +7,10 @@ export async function addChainToMM ({ btn }) {
 
     const coinName = document.getElementById('js-coin-name').value
     const subNetwork = document.getElementById('js-subnetwork').value
-    const jsonRPC = document.getElementById('js-json-rpc').value
+    const jsonRPC = process.env.RPC_NODE_ADDRESS
     const path = process.env.NETWORK_PATH || '/'
 
-    const blockscoutURL = location.protocol + '//' + location.host + path
+    const blockscoutURL = process.env.EXPLORER_ADDRESS
     if (chainIDFromWallet !== chainIDFromInstance) {
       await window.ethereum.request({
         method: 'wallet_addEthereumChain',
