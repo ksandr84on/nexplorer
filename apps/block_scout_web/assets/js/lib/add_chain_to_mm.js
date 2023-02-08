@@ -11,6 +11,10 @@ export async function addChainToMM ({ btn }) {
     const path = process.env.NETWORK_PATH || '/'
 
     const blockscoutURL = location.protocol + '//' + location.host + path
+
+    console.log(jsonRPC)
+    console.log(blockscoutURL)
+    
     if (chainIDFromWallet !== chainIDFromInstance) {
       await window.ethereum.request({
         method: 'wallet_addEthereumChain',
